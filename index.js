@@ -17,6 +17,11 @@ router.get("/", async (req, res, next) => {
   next();
 });
 
+router.get("/teste", async (req, res, next) => {
+    res.status(200).send("Método Get - Rota de Testes");
+    next();
+  });
+
 router.post("/", async (req, res, next) => {
   res.status(200).send("Método Post");
   next();
