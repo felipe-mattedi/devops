@@ -3,8 +3,6 @@ on: [push]
 
 jobs:
   teste:
-    environment:
-      name: Prod
     runs-on:  ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +18,11 @@ jobs:
           reviewers: duiliofelix
           branch: dev
           delete-branch: false
+  deploy:
+    environment:
+      name: Prod
+    runs-on:  ubuntu-latest
+    steps:
       - name: Deploy no Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
