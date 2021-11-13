@@ -32,5 +32,6 @@ jobs:
           ECR_REPOSITORY: fzm-teste-ecr
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REPOSITORY:latest .
-          docker push public.ecr.aws/y7l4l2h9/$ECR_REPOSITORY:latest
+          docker build -t fzm-teste-ecr .
+          docker tag fzm-teste-ecr:latest public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest
+          docker push public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest
