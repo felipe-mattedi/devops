@@ -17,10 +17,6 @@ jobs:
           reviewers: duiliofelix
           branch: dev
           delete-branch: false
-  AWS:
-    needs: teste
-    runs-on:  ubuntu-latest
-    steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
