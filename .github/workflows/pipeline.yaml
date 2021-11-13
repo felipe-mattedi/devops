@@ -17,20 +17,8 @@ jobs:
           reviewers: duiliofelix
           branch: dev
           delete-branch: false
-  merge-pr:
-    needs: teste
-    environment:
-      name: Prod
-    runs-on:  ubuntu-latest
-    steps:
-      - name: Merge PR
-        uses: juliangruber/merge-pull-request-action@v1
-        with:
-          github-token: ${{ secrets.TOKEN }}
-          number: 1
-          method: squash
   deploy:
-    needs: merge-pr
+    needs: teste
     runs-on:  ubuntu-latest
     steps:
       - name: Deploy no Heroku
@@ -39,4 +27,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "projeto-devops-felipe"
           heroku_email: "felipe.mattedi@terra.com.br"
-          branch: dev
+          branch: pipeline
