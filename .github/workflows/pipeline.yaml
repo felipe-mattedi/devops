@@ -32,6 +32,7 @@ jobs:
           ECR_REPOSITORY: fzm-teste-ecr
           IMAGE_TAG: ${{ github.sha }}
         run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/y7l4l2h9
           docker build -t fzm-teste-ecr .
-          docker tag fzm-teste-ecr:latest public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest2
-          docker push public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest2
+          docker tag fzm-teste-ecr:latest public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest3
+          docker push public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest3
