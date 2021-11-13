@@ -33,5 +33,5 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t fzm-teste-ecr .
-          docker tag fzm-teste-ecr:latest public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest
-          docker push public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest
+          docker tag fzm-teste-ecr:latest public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest2
+          docker push public.ecr.aws/y7l4l2h9/fzm-teste-ecr:latest2
